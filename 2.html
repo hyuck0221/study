@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <input id="text" type="text">
+        <button id="btn" onclick="func()">click</button>
+        <img id="img" src="https://i1.sndcdn.com/artworks-aVVkK8y1iQwj8SHY-0qjuiA-t500x500.jpg">
+
+        <script>
+            function func(){
+                var text = document.getElementById('text').value;
+                document.getElementById("img").src = text;
+            }
+            
+        </script>
+    </body>
+</html>
