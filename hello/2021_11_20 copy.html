@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이름</h2>
+    <input id="name" type="text">
+    <h2>나이</h2>
+    <input id="age" type="text">
+    <h2>아이디</h2>
+    <input id="id" type="text">
+    <h2>비밀번호</h2>
+    <input id="password" type="password">
+    <h2>비밀번호 확인</h2>
+    <input id="password_cheak" type="password">
+    <br><button onclick="func()">확인</button>
+    <script>
+        var ips = document.querySelectorAll("input")
+        var check, cheak_num=[], print=[];
+        function func()
+        {
+            check=0;
+            ips.forEach(ip=>{
+                if(ip.value == "")
+                {
+                    cheak_num[check] = ip.id;
+                    check++;
+                }   
+            })
+            if(check == 5)
+                alert("모두 공백입니다");
+            else if(check > 0)
+            {
+                for(var a=0;a<check;a++)
+                {
+                    print[a]="";
+                    switch(cheak_num[a])
+                    {
+                        case "name":
+                            print[a]="이름 ";
+                            break;
+                        case "age":
+                            print[a]="나이 ";
+                            break;
+                        case "id":
+                            print[a]="아이디 ";
+                            break;
+                        case "password":
+                            print[a]="패스워드 ";
+                            break;
+                        case "password_cheak":
+                            print[a]="패스워드 확인 ";
+                            break;
+                    }
+                }
+                for(var a=check;a<5;a++)
+                    print[a]="";
+                alert(print[0]+print[1]+print[2]+print[3]+print[4]+"이(가) 공백입니다");
+            }
+            else
+            {
+                if(!!document.getElementById("age").value.match(/[^0-9]+/))
+                    alert("나이에 숫자를 입력해주세요");
+                else if(document.getElementById("password").value != document.getElementById("password_cheak").value)
+                    alert("비밀번호가 서로 다릅니다");
+                else
+                    alert("실행");
+            }
+        }
+        
+    </script>
+</body>
+</html>

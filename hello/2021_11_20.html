@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이름
+    <input id="name" type="text"></h2>
+    <h2>나이
+    <input id="age" type="text"></h2>
+    <h2>아이디
+    <input id="id" type="text"></h2>
+    <h2>비밀번호
+    <input id="password" type="password"></h2>
+    <h2>비밀번호 확인
+    <input id="password_cheak" type="password"></h2>
+    <br><button onclick="func()">확인</button>
+    <script>
+        function func()
+        {
+            if(document.getElementById("name").value == "")
+                alert("이름을 입력해주세요");
+            else if(document.getElementById("age").value == "")
+                alert("나이를 입력해주세요");
+            else if(!!document.getElementById("age").value.match(/[^0-9]+/))
+                alert("나이에 숫자를 입력해주세요");
+            else if(document.getElementById("id").value == "")
+                alert("아이디를 입력해주세요");
+            else if(document.getElementById("password").value == "")
+                alert("패스워드를 입력해주세요");
+            else if(document.getElementById("password_cheak").value == "")
+                alert("패스워드 확인을 입력해주세요");
+            else if(document.getElementById("password").value != document.getElementById("password_cheak").value)
+                alert("비밀번호가 서로 다릅니다");
+            else
+                alert("실행");
+        }
+    </script>
+</body>
+</html>
